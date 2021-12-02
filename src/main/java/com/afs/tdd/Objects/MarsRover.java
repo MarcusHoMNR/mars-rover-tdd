@@ -19,16 +19,18 @@ public class MarsRover {
         directionList.add("N");
     }
     public String batchControlMarsRover(String command) {
-        return null;
+        for (int i = 0; i < command.length(); i++) {
+            controlMarsRover(String.valueOf(command.charAt(i)));
+        }
+        return String.format("%d %d %s", coordinateX, coordinateY, direction);
     }
 
-    private String controlMarsRover(String command) {
+    private void controlMarsRover(String command) {
         if (command.equals("M")) {
             moveMarsRover();
         } else {
             rotateMarsRover(command);
         }
-        return String.format("%d %d %s", coordinateX, coordinateY, direction);
     }
 
     private void rotateMarsRover(String command) {
