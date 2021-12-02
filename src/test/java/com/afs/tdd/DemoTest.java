@@ -59,4 +59,19 @@ class DemoTest {
         //return
         assertEquals("0 0 N", result);
     }
+
+    // Rotate to left
+    @Test
+    void should_direct_change_to_W_when_rotate_Mars_Rover_given_direction_N_and_command_L() {
+        //given
+        MarsRover marsRover = new MarsRover(0, 0, "N");
+        String command = "L";
+
+        //when
+        String result = marsRover.controlMarsRover(command);
+
+        //return
+        assertEquals("0 0 W", result);
+    }
+
 }
