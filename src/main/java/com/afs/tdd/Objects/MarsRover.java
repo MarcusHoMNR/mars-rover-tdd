@@ -18,8 +18,11 @@ public class MarsRover {
         directionList.add("W");
         directionList.add("N");
     }
+    public String batchControlMarsRover(String command) {
+        return null;
+    }
 
-    public String controlMarsRover(String command) {
+    private String controlMarsRover(String command) {
         if (command.equals("M")) {
             moveMarsRover();
         } else {

@@ -15,7 +15,7 @@ class DemoTest {
         String command = "R";
 
         //when
-        String result = marsRover.controlMarsRover(command);
+        String result = marsRover.batchControlMarsRover(command);
 
         //return
         assertEquals("0 0 E", result);
@@ -28,7 +28,7 @@ class DemoTest {
         String command = "R";
 
         //when
-        String result = marsRover.controlMarsRover(command);
+        String result = marsRover.batchControlMarsRover(command);
 
         //return
         assertEquals("0 0 S", result);
@@ -41,7 +41,7 @@ class DemoTest {
         String command = "R";
 
         //when
-        String result = marsRover.controlMarsRover(command);
+        String result = marsRover.batchControlMarsRover(command);
 
         //return
         assertEquals("0 0 W", result);
@@ -54,7 +54,7 @@ class DemoTest {
         String command = "R";
 
         //when
-        String result = marsRover.controlMarsRover(command);
+        String result = marsRover.batchControlMarsRover(command);
 
         //return
         assertEquals("0 0 N", result);
@@ -68,7 +68,7 @@ class DemoTest {
         String command = "L";
 
         //when
-        String result = marsRover.controlMarsRover(command);
+        String result = marsRover.batchControlMarsRover(command);
 
         //return
         assertEquals("0 0 W", result);
@@ -81,7 +81,7 @@ class DemoTest {
         String command = "L";
 
         //when
-        String result = marsRover.controlMarsRover(command);
+        String result = marsRover.batchControlMarsRover(command);
 
         //return
         assertEquals("0 0 S", result);
@@ -94,7 +94,7 @@ class DemoTest {
         String command = "L";
 
         //when
-        String result = marsRover.controlMarsRover(command);
+        String result = marsRover.batchControlMarsRover(command);
 
         //return
         assertEquals("0 0 E", result);
@@ -107,7 +107,7 @@ class DemoTest {
         String command = "L";
 
         //when
-        String result = marsRover.controlMarsRover(command);
+        String result = marsRover.batchControlMarsRover(command);
 
         //return
         assertEquals("0 0 N", result);
@@ -121,7 +121,7 @@ class DemoTest {
         String command = "M";
 
         //when
-        String result = marsRover.controlMarsRover(command);
+        String result = marsRover.batchControlMarsRover(command);
 
         //return
         assertEquals("0 1 N", result);
@@ -134,7 +134,7 @@ class DemoTest {
         String command = "M";
 
         //when
-        String result = marsRover.controlMarsRover(command);
+        String result = marsRover.batchControlMarsRover(command);
 
         //return
         assertEquals("1 0 E", result);
@@ -147,7 +147,7 @@ class DemoTest {
         String command = "M";
 
         //when
-        String result = marsRover.controlMarsRover(command);
+        String result = marsRover.batchControlMarsRover(command);
 
         //return
         assertEquals("0 -1 S", result);
@@ -160,10 +160,24 @@ class DemoTest {
         String command = "M";
 
         //when
-        String result = marsRover.controlMarsRover(command);
+        String result = marsRover.batchControlMarsRover(command);
 
         //return
         assertEquals("-1 0 W", result);
     }
+
+    @Test
+    void should_change_to_minus_1_And_1_And_N_when_batch_control_mars_rover_given_0_And_0_And_W_command_MLMR() {
+        //given
+        MarsRover marsRover = new MarsRover(0, 0, "W");
+        String command = "M";
+
+        //when
+        String result = marsRover.batchControlMarsRover(command);
+
+        //return
+        assertEquals("-1 0 W", result);
+    }
+
 
 }
