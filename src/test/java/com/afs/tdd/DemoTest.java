@@ -167,16 +167,16 @@ class DemoTest {
     }
 
     @Test
-    void should_change_to_minus_1_And_1_And_N_when_batch_control_mars_rover_given_0_And_0_And_W_command_MLMR() {
+    void should_change_to_minus_1_And_1_And_N_when_batch_control_mars_rover_given_0_And_0_And_N_command_MLMR() {
         //given
-        MarsRover marsRover = new MarsRover(0, 0, "W");
-        String command = "M";
+        MarsRover marsRover = new MarsRover(0, 0, "N");
+        String command = "MLMR";
 
         //when
         String result = marsRover.batchControlMarsRover(command);
 
         //return
-        assertEquals("-1 0 W", result);
+        assertEquals("-1 1 N", result);
     }
 
 
