@@ -20,8 +20,11 @@ public class MarsRover {
     }
 
     public String controlMarsRover(String command) {
+        if (command.equals("M")) {
+            moveMarsRover();
+        } else {
             rotateMarsRover(command);
-
+        }
         return String.format("%d %d %s", coordinateX, coordinateY, direction);
     }
 
@@ -32,6 +35,16 @@ public class MarsRover {
         }
         if (command.equals("L")) {
             direction = directionList.get((currentDirectionIndex - 1) < 0 ? directionList.size() - 1 : directionList.indexOf(direction) - 1);
+        }
+    }
+
+    private void moveMarsRover() {
+        switch (direction) {
+            case "N":
+                coordinateY++;
+                break;
+            default:
+                break;
         }
     }
 }
