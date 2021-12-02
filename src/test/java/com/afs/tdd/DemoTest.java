@@ -20,4 +20,17 @@ class DemoTest {
         //return
         assertEquals("0 0 E", result);
     }
+
+    @Test
+    void should_direct_change_to_S_when_rotate_Mars_Rover_given_direction_E_and_command_R() {
+        //given
+        MarsRover marsRover = new MarsRover(0, 0, "E");
+        String command = "R";
+
+        //when
+        String result = marsRover.controlMarsRover(command);
+
+        //return
+        assertEquals("0 0 S", result);
+    }
 }
