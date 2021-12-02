@@ -46,6 +46,9 @@ public class MarsRover {
             case "S":
                 coordinateY--;
                 break;
+            case "W":
+                coordinateX--;
+                break;
             case "N":
                 coordinateY++;
                 break;
