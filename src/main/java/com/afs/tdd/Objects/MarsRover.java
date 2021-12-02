@@ -40,6 +40,9 @@ public class MarsRover {
 
     private void moveMarsRover() {
         switch (direction) {
+            case "E":
+                coordinateX++;
+                break;
             case "N":
                 coordinateY++;
                 break;
