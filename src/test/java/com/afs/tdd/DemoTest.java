@@ -113,5 +113,18 @@ class DemoTest {
         assertEquals("0 0 N", result);
     }
 
+    // Move
+    @Test
+    void should_coordinateY_change_to_1_when_move_Mars_Rover_given_direction_N_command_M() {
+        //given
+        MarsRover marsRover = new MarsRover(0, 0, "N");
+        String command = "M";
+
+        //when
+        String result = marsRover.controlMarsRover(command);
+
+        //return
+        assertEquals("0 1 N", result);
+    }
 
 }
