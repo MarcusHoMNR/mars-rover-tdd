@@ -20,9 +20,8 @@ public class MarsRover {
     }
 
     public String controlMarsRover(String command) {
-        if (command.equals("R")) {
             rotateMarsRover(command);
-        }
+
         return String.format("%d %d %s", coordinateX, coordinateY, direction);
     }
 
