@@ -100,4 +100,18 @@ class DemoTest {
         assertEquals("0 0 E", result);
     }
 
+    @Test
+    void should_direct_change_to_N_when_rotate_Mars_Rover_given_direction_E_and_command_L() {
+        //given
+        MarsRover marsRover = new MarsRover(0, 0, "E");
+        String command = "L";
+
+        //when
+        String result = marsRover.controlMarsRover(command);
+
+        //return
+        assertEquals("0 0 N", result);
+    }
+
+
 }
