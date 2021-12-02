@@ -6,6 +6,8 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class DemoTest {
+
+    // Change Direction
     @Test
     void should_direct_change_to_E_when_rotate_Mars_Rover_given_direction_N_and_command_R() {
         //given
