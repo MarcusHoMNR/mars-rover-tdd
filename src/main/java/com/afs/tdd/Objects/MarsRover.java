@@ -1,27 +1,26 @@
 package com.afs.tdd.Objects;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class MarsRover {
     private int coordinateX;
     private int coordinateY;
     private String direction;
-    static final List<String> directionList = new ArrayList<>();
+    static final List<String> directionList = new ArrayList<>(Arrays.asList("E", "S", "W", "N"));
 
     public MarsRover(int coordinateX, int coordinateY, String direction) {
         this.coordinateX = coordinateX;
         this.coordinateY = coordinateY;
         this.direction = direction;
-        directionList.add("E");
-        directionList.add("S");
-        directionList.add("W");
-        directionList.add("N");
     }
-    public String batchControlMarsRover(String command) {
-        for (int i = 0; i < command.length(); i++) {
-            controlMarsRover(String.valueOf(command.charAt(i)));
+
+    public String batchControlMarsRover(String commands) {
+        for (char command : commands.toCharArray()) {
+            controlMarsRover(String.valueOf(command));
         }
+
         return String.format("%d %d %s", coordinateX, coordinateY, direction);
     }
 
@@ -35,11 +34,20 @@ public class MarsRover {
 
     private void rotateMarsRover(String command) {
         int currentDirectionIndex = directionList.indexOf(direction);
+        Boolean isIndexOutOfBound = null;
+        int newDirectionIndex = -1;
+
         if (command.equals("R")) {
-            direction = directionList.get((currentDirectionIndex + 1) > (directionList.size() - 1) ? 0 : directionList.indexOf(direction) + 1);
+            isIndexOutOfBound = (currentDirectionIndex + 1) > (directionList.size() - 1);
+            newDirectionIndex = isIndexOutOfBound ? 0 : currentDirectionIndex + 1;
         }
         if (command.equals("L")) {
-            direction = directionList.get((currentDirectionIndex - 1) < 0 ? directionList.size() - 1 : directionList.indexOf(direction) - 1);
+            isIndexOutOfBound = (currentDirectionIndex - 1) < 0;
+            newDirectionIndex = isIndexOutOfBound ? directionList.size() - 1 : currentDirectionIndex - 1;
+        }
+
+        if (isIndexOutOfBound != null && newDirectionIndex >= 0) {
+            direction = directionList.get(newDirectionIndex);
         }
     }
 
